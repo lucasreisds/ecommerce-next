@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-type Product = { id: number; title: string; price: number }
+export type Product = { id: number; title: string; price: number }
 
 type CarState = {
     items: Product[]
