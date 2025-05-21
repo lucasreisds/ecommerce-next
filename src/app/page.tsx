@@ -1,7 +1,4 @@
-
-'use client'
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export type StoreProduct = {
   id: number;
@@ -15,12 +12,9 @@ export type StoreProduct = {
     count: number;
   }
 }
-export default function Home() {
-  const [products, setProducts] = useState<StoreProduct[]>([]);
-
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products").then((res) => res.json()).then(setProducts)
-  }, [])
+export default async function Home() {
+  const responseStore = await fetch("https://fakestoreapi.com/products")
+  const products: StoreProduct[] = await responseStore.json()
 
   return (
     <div className="grid grid-cols-2 md:grid-cols4 gap-4 p-4">
