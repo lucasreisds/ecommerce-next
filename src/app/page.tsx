@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-type StoreProduct = {
+export type StoreProduct = {
   id: number;
   title: string;
   price: number;
