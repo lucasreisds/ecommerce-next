@@ -17,6 +17,7 @@ export default async function Home() {
   const products: StoreProduct[] = await responseStore.json()
 
   return (
+
     <div className="grid grid-cols-2 md:grid-cols4 gap-4 p-4">
       {products.map((product => (
         <Link key={product.id} href={`/product/${product.id}`}>
@@ -28,5 +29,6 @@ export default async function Home() {
         </Link>
       )))}
     </div>
+
   );
 }
